@@ -1,0 +1,9 @@
+@mixin flexCenter{
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin container{
+    width: 90%;
+    margin: 0 auto;
+}
