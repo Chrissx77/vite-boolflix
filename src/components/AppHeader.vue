@@ -1,6 +1,16 @@
 <script>
-export default{
+import { store } from '../store';
+
+export default {
     name: "AppHeader",
+
+    data() {
+        return {
+            store,
+        }
+    }
+
+
 }
 
 </script>
@@ -12,8 +22,8 @@ export default{
         </div>
 
         <div class="searchBar">
-            <input type="text">
-            <button>Search</button>
+            <input type="text" v-model.trim="store.titleFilm">
+            <button @click.prevent="$emit('search')">Search</button>
         </div>
     </header>
 </template>

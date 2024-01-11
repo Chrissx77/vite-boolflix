@@ -25,7 +25,7 @@ export default {
   methods: {
     getFilms() {
       let filmsURL = store.movieURL;
-      if (store.titleFilm) {
+      if (store.titleFilm !== "") {
         filmsURL += `&query= ${store.titleFilm}`;
       }
       axios
@@ -33,6 +33,7 @@ export default {
         .then(res => {
           console.log(res.data.results);
           store.arrayFilms = res.data.results;
+          console.log(store.arrayFilms);
         })
         .catch(error => {
           console.log("ERRORE CHIAMATA API", error);
@@ -48,7 +49,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader />
+  <AppHeader @search="getFilms" />
   <AppMain />
 </template>
 
