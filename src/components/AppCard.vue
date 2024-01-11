@@ -1,17 +1,12 @@
 <script>
-import AppCard from './AppCard.vue';
-
 export default{
-    name: "AppMain",
-    components:{
-        AppCard,
-    }
+    name: "AppCard",
 }
 
 </script>
 
 <template>
-    <AppCard/>
+    <h1>CIAO</h1>
 </template>
 
 <style lang="scss" scoped>
