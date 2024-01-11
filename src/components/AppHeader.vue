@@ -1,4 +1,7 @@
 <script>
+export default{
+    name: AppHeader,
+}
 
 </script>
 
@@ -10,6 +13,7 @@
 
         <div class="searchBar">
             <input type="text">
+            <button>Search</button>
         </div>
     </header>
 </template>
@@ -18,7 +22,7 @@
 @use '../style/partials/mixins' as *;
 @use '../style/partials/variable' as *;
 
-header{
+header {
     background-color: black;
     color: $primary;
     @include flexCenter;
