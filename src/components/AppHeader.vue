@@ -20,7 +20,6 @@ export default {
         <div class="title">
             <h2>BOOLFLIX</h2>
         </div>
-
         <div class="searchBar">
             <input type="text" v-model.trim="store.titleFilm">
             <button @click.prevent="$emit('search')">Search</button>

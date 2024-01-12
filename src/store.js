@@ -7,4 +7,9 @@ export const store = reactive({
     arraySerie:[],
     serieURL: 'https://api.themoviedb.org/3/search/tv?api_key=9c27caa6c48e99f11df4bcc927606f67',
     titleFilm:'',
+
+    preURL:'https://image.tmdb.org/t/p/w342/',
+
+    checkFilm: false,
+    checkSerie: false,
 });

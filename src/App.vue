@@ -2,7 +2,7 @@
 
 // IMPORTO I COMPONENTI
 import AppHeader from './components/AppHeader.vue';
-import AppMain from './components/AppMain.vue'
+import AppMain from './components/AppMain.vue';
 
 // IMPORTO AXIOS PER API
 import axios from 'axios';
@@ -31,9 +31,9 @@ export default {
       axios
         .get(filmsURL)
         .then(res => {
-          // console.log(res.data.results);
           store.arrayFilms = res.data.results;
           console.log(store.arrayFilms);
+          checkFilm = true;
         })
         .catch(error => {
           console.log("ERRORE CHIAMATA API", error);
@@ -49,9 +49,9 @@ export default {
       axios
         .get(filmsURL)
         .then(res => {
-          // console.log(res.data.results);
           store.arraySerie = res.data.results;
           console.log(store.arraySerie);
+          checkSerie = true;
         })
         .catch(error => {
           console.log("ERRORE CHIAMATA API", error);

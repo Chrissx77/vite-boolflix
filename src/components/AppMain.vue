@@ -22,14 +22,16 @@ export default {
 
 <template>
     <main>
-        <h1 class="films">FILMS</h1>
-        <div>
-            <AppCard v-for="film in store.arrayFilms" :key="film.id" :info="film" />
-        </div>
-        <h1 class="serie">SERIE TV</h1>
-        <div>
-            <AppCardSerie v-for="serie in store.arraySerie" :key="serie.id" :infoSerie="serie" />
-        </div>
+        <!-- <div class="show" v-if="store.checkFilm === true && store.checkSerie === true"> -->
+            <h1>FILMS:</h1>
+            <div class="films">
+                <AppCard v-for="film in store.arrayFilms" :key="film.id" :info="film" />
+            </div>
+            <h1>SERIE TV:</h1>
+            <div class="serie">
+                <AppCardSerie v-for="serie in store.arraySerie" :key="serie.id" :infoSerie="serie" />
+            </div>
+        <!-- </div> -->
     </main>
 </template>
 
@@ -42,8 +44,9 @@ main {
     min-height: 800px;
     padding: 30px;
 
-    div {
-        @include flexCenter;
+    .films {
+        display: flex;
+        flex-wrap: wrap;
         @include container;
         flex-wrap: wrap;
         gap: 10px;
@@ -51,6 +54,11 @@ main {
 
     .serie {
         margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        @include container;
+        flex-wrap: wrap;
+        gap: 10px;
     }
 }
 </style>
