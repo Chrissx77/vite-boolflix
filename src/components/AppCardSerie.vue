@@ -1,29 +1,29 @@
 <script>
 export default {
-    name: "AppCard",
+    name: "AppCardSerie",
     props: {
-        info: Object,
+        infoSerie: Object,
     }
 }
 
 </script>
 
 <template>
-    <div class="infoFilm">
+    <div class="infoSerie">
         <div class="title">
-            {{ info.title }}
+            {{ infoSerie.name }}
         </div>
         <div class="titleOriginal">
-            {{ info.original_title }}
+            {{ infoSerie.original_name }}
         </div>
 
-        <div v-if="info.original_language === 'it'">
+        <div v-if="infoSerie.original_language === 'it'">
             <img src="../assets/bandieraITA.jpg" alt="">
         </div>
-        <div v-else-if="info.original_language === 'en'">
+        <div v-else-if="infoSerie.original_language === 'en'">
             <img src="../assets/bandieraEN.jpg" alt="">
         </div>
-        <div v-else-if="info.original_language === 'us'">
+        <div v-else-if="infoSerie.original_language === 'us'">
             <img src="../assets/bandieraUSA.jpg" alt="">
         </div>
         <div v-else>
@@ -31,7 +31,7 @@ export default {
         </div>
 
         <div class="vote">
-            {{ info.vote_average }}
+            {{ infoSerie.vote_average }}
         </div>
     </div>
 </template>
@@ -40,7 +40,7 @@ export default {
 @use '../style/partials/mixins' as *;
 @use '../style/partials/variable' as *;
 
-.infoFilm {
+.infoSerie {
     border: 1px solid black;
     width: calc(100% / 2 - 10px);
     padding: 10px;
@@ -50,6 +50,5 @@ export default {
             width: 20px;
         }
     }
-
 }
 </style>

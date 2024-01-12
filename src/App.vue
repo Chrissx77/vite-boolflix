@@ -31,30 +31,53 @@ export default {
       axios
         .get(filmsURL)
         .then(res => {
-          console.log(res.data.results);
+          // console.log(res.data.results);
           store.arrayFilms = res.data.results;
           console.log(store.arrayFilms);
         })
         .catch(error => {
           console.log("ERRORE CHIAMATA API", error);
         })
+    },
+    
+    getSerie() {
+      console.log("SONO DENTRO SERIE");
+      let filmsURL = store.serieURL;
+      if (store.titleFilm !== "") {
+        filmsURL += `&query= ${store.titleFilm}`;
+      }
+      axios
+        .get(filmsURL)
+        .then(res => {
+          // console.log(res.data.results);
+          store.arraySerie = res.data.results;
+          console.log(store.arraySerie);
+        })
+        .catch(error => {
+          console.log("ERRORE CHIAMATA API", error);
+        })
+    },
+
+    getApi(){
+      this.getFilms();
+      this.getSerie();
     }
   },
-
-  created() {
-    this.getFilms();
-  }
 }
 
 </script>
 
 <template>
-  <AppHeader @search="getFilms" />
-  <AppMain />
+  <div>
+    <AppHeader @search="getApi" />
+    <AppMain />
+
+  </div>
 </template>
 
 <style lang="scss">
 @use 'style/general.scss' as *;
 @use 'style/partials/mixins' as *;
 @use 'style/partials/variable' as *;
+
 </style>
