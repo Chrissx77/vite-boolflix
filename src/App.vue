@@ -33,7 +33,7 @@ export default {
         .then(res => {
           store.arrayFilms = res.data.results;
           console.log(store.arrayFilms);
-          checkFilm = true;
+          store.checkFilm = true;
         })
         .catch(error => {
           console.log("ERRORE CHIAMATA API", error);
@@ -51,7 +51,7 @@ export default {
         .then(res => {
           store.arraySerie = res.data.results;
           console.log(store.arraySerie);
-          checkSerie = true;
+          store.checkSerie = true;
         })
         .catch(error => {
           console.log("ERRORE CHIAMATA API", error);

@@ -13,3 +13,4 @@ export const store = reactive({
     checkFilm: false,
     checkSerie: false,
 });
+
