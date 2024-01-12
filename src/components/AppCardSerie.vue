@@ -42,7 +42,7 @@ export default {
 
 .infoSerie {
     border: 1px solid black;
-    width: calc(100% / 2 - 10px);
+    width: calc(100% / 3 - 10px);
     padding: 10px;
 
     div {

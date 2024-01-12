@@ -1,7 +1,7 @@
 <script>
 // IMPORTO COMPONENTI
 import AppCard from './AppCard.vue';
-import AppCardSerie from './AppCard.vue';
+import AppCardSerie from './AppCardSerie.vue';
 
 // IMPORTO STORE
 import { store } from '../store';
