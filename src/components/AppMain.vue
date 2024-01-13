@@ -22,7 +22,8 @@ export default {
 
 <template>
     <main>
-        <!-- <div class="show" v-if="store.checkFilm === true && store.checkSerie === true"> -->
+        <h1 v-if="store.arrayFilms.length === 0">Fai la tua prima ricerca...</h1>
+        <div class="show" v-if="store.arrayFilms.length > 0">
             <h1>FILMS:</h1>
             <div class="films">
                 <AppCard v-for="film in store.arrayFilms" :key="film.id" :info="film" />
@@ -32,7 +33,7 @@ export default {
             <div class="serie">
                 <AppCardSerie v-for="serie in store.arraySerie" :key="serie.id" :infoSerie="serie" />
             </div>
-        <!-- </div> -->
+        </div>
     </main>
 </template>
 
@@ -40,15 +41,19 @@ export default {
 @use '../style/partials/mixins' as *;
 @use '../style/partials/variable' as *;
 
+h1 {
+    padding: 20px;
+}
+
 main {
-    background-color: #b1b1b1;
+    background-color: rgb(59, 59, 59);
     min-height: 800px;
     padding: 30px;
 
     .films {
         @include container;
         display: flex;
-        flex-wrap: wrap;
+        justify-content: center;
         flex-wrap: wrap;
         gap: 10px;
     }
@@ -57,7 +62,7 @@ main {
         @include container;
         margin-top: 50px;
         display: flex;
-        flex-wrap: wrap;
+        justify-content: center;
         flex-wrap: wrap;
         gap: 10px;
     }

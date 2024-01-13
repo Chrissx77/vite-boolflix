@@ -30,9 +30,25 @@ export default {
 @use '../style/partials/variable' as *;
 
 header {
-    background-color: black;
-    color: $primary;
     @include flexCenter;
+    background-color: rgb(69, 69, 69);
+    color: $primary;
     padding: 40px;
+
+    input{
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    button{
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 0 10px;
+        font-weight: bold;
+    }
+
+
 }
 </style>
