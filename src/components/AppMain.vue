@@ -24,12 +24,12 @@ export default {
     <main>
         <h1 v-if="store.arrayFilms.length === 0">Fai la tua prima ricerca...</h1>
         <div class="show" v-if="store.arrayFilms.length > 0">
-            <h1>FILMS:</h1>
+            <h1>Films:</h1>
             <div class="films">
                 <AppCard v-for="film in store.arrayFilms" :key="film.id" :info="film" />
             </div>
 
-            <h1>SERIE TV:</h1>
+            <h1>Serie TV:</h1>
             <div class="serie">
                 <AppCardSerie v-for="serie in store.arraySerie" :key="serie.id" :infoSerie="serie" />
             </div>
