@@ -27,6 +27,7 @@ export default {
             <div class="films">
                 <AppCard v-for="film in store.arrayFilms" :key="film.id" :info="film" />
             </div>
+
             <h1>SERIE TV:</h1>
             <div class="serie">
                 <AppCardSerie v-for="serie in store.arraySerie" :key="serie.id" :infoSerie="serie" />
@@ -45,18 +46,18 @@ main {
     padding: 30px;
 
     .films {
+        @include container;
         display: flex;
         flex-wrap: wrap;
-        @include container;
         flex-wrap: wrap;
         gap: 10px;
     }
 
     .serie {
+        @include container;
         margin-top: 50px;
         display: flex;
         flex-wrap: wrap;
-        @include container;
         flex-wrap: wrap;
         gap: 10px;
     }
